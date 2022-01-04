@@ -18,10 +18,19 @@
         </li>
         <li>
           <%= link_to 'Cadastrar nova receita', new_recipe_path %>
+        </li>        
+        <li>
+          <%= link_to 'Cadastrar novo tipo de receita', new_recipe_type_path %>
+        </li>
+        <li>
+          <%= link_to 'Cadastrar nova Culinaria', new_cuisine_path %>
         </li>
       </ul>
     </nav>
-    
-    <%= yield %>
+    <main>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <%= yield %>
+    </main>    
   </body>
 </html>

@@ -6,11 +6,11 @@
     </dt>
 
     <dd>
-      <strong>Tipo da receita: </strong><%= @recipe.recipe_type %>
+      <strong>Tipo da receita: </strong><%= @recipe.recipe_type.name if @recipe.recipe_type %>
     </dd>
 
     <dd>
-      <strong>Culinaria: </strong><%= @recipe.cuisine %>
+      <strong>Culinaria: </strong><%= @recipe.cuisine.name if @recipe.cuisine %>
     </dd>
 
     <dd>

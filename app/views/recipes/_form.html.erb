@@ -1,0 +1,28 @@
+<%= form_with model: recipe do | f | %>
+  <%= f.label 'nome: '%>
+  <%= f.text_field :name %>
+  <br />
+
+  <%= f.label 'Tipo da receita: '%>
+  <%= f.collection_select :recipe_type_id, @rt, :id, :name %>
+  <br />
+
+  <%= f.label 'Culinaria: '%>
+  <%= f.collection_select :cuisine_id, @cs, :id, :name %>
+  <br />
+
+  <%= f.label 'Ingredientes: '%>
+  <%= f.text_area :ingredients %>
+  <br />
+
+  <%= f.label 'Metodo de preparo: '%>
+  <%= f.text_field :cook_method %>
+  <br />
+
+  <%= f.label 'Tempo de preparo: '%>
+  <%= f.number_field :cook_time %>
+  <br />
+
+  <%= f.submit 'Salvar'%>
+
+<% end %>
