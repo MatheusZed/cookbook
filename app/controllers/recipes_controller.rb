@@ -51,4 +51,16 @@ class RecipesController < ApplicationController
       render 'edit'
     end
   end
+
+  def publish
+    recipe = Recipe.find(params[:id])
+
+    if recipe.draft?
+      recipe.published!
+      redirect_to recipe_path(recipe.id), notice: 'A receita foi publicada com sucesso!'
+    else
+      recipe.draft!
+      redirect_to recipe_path(recipe.id), notice: 'A receita esta como rascunho'
+    end
+  end
 end
